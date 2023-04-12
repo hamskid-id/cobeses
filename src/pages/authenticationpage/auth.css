@@ -1,0 +1,21 @@
+.authBgImg{
+    background-image: url("../../assets/cobb 2.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid white;
+}
+.authChildren{
+    margin:10% auto;
+    border-radius: 16px;
+    padding: 3rem!important;
+}
+.routeLinkDiv{
+    display:flex;
+    align-items:baseline;
+}
+@media only screen and (max-width:425px){
+    .authChildren{
+        padding: 1rem!important;
+    }
+}

@@ -1,0 +1,84 @@
+.explore-text{
+    font-weight: 500;
+    font-size: 72px;
+    line-height: 90px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #2E2C34;
+    padding:0.5rem 5rem;
+}
+.explore-sub-text{
+    padding:0.2rem 23rem;
+}
+.explore-input{
+    border:1px solid #3375FF;
+}
+.inner-cover{
+    padding:3rem;
+}
+.input-cover{
+    padding: 0 17rem;
+}
+.accedez-header{
+    padding: 0 15rem;
+}
+@media only screen and (max-width:1024px){
+    .explore-text {
+      font-size: 52px;
+      line-height: 70px;
+      padding: 0.5rem 2rem;
+  }
+  .explore-sub-text {
+    padding: 0.2rem 10rem;
+  }
+  }
+@media only screen and (max-width:1024px){
+    .explore-text {
+      font-size: 32px;
+      line-height: 50px;
+    }
+    .explore-sub-text {
+      padding: 0.2rem 5rem;
+    }
+    .accedez-header {
+      padding: 0 5rem;
+    }
+    .input-cover {
+        padding: 0 7rem;
+    }
+  }
+  @media only screen and (max-width:768px){
+    .explore-text {
+        font-size: 25px;
+        line-height: 30px;
+      }
+      .explore-sub-text {
+        padding: 0.2rem 3rem;
+      }
+      .accedez-header {
+        padding: 0 3rem;
+        line-height:30px;
+      }
+      .input-cover {
+          padding: 0 4rem;
+      }
+}
+@media only screen and (max-width:500px){
+    .explore-text {
+        font-size: 20px;
+        line-height: 30px;
+        padding:0;
+    }
+      .explore-sub-text {
+        padding: 0.2rem 1rem;
+      }
+      .accedez-header {
+        padding: 0 2rem;
+      }
+      .input-cover {
+          padding: 0 2rem;
+      }
+      .inner-cover{
+        padding:1rem;
+      }
+}
