@@ -43,7 +43,7 @@ export const SignIn=()=>{
                     type="email"
                     register={register}
                     errors={errors.email}
-                    style="p-3 light-greyInput mb-2 w-100 border border-white fs-6 br-8 ps-5"
+                    style="p-08 light-greyInput mb-2 w-100 border border-white fs-6 br-8 ps-5"
                 />
                 <InputField
                     inputIcon={Lock}
@@ -52,10 +52,9 @@ export const SignIn=()=>{
                     type="password"
                     register={register}
                     errors={errors.password}
-                    style="p-3 light-greyInput mb-2 w-100 border border-white fs-6 br-8 ps-5"
+                    style="p-08 light-greyInput mb-2 w-100 border border-white fs-6 br-8 ps-5"
                 />
                 <InputField
-                    inputIcon={Lock}
                     name="checkbox"
                     type="checkbox"
                     labelTitle="Se souvenir de moi"
@@ -66,7 +65,7 @@ export const SignIn=()=>{
                 />
                 <Btn
                     value="Souscrire"
-                    style="w-100 btn btn-md bg-greyYellow mb-2 p-2 text-white fs-6"
+                    style="w-100 btn btn-md bg-greyYellow mb-2 p-08 text-white fs-6"
                 />
                 <Text
                     title="Mot de passe oublié?"

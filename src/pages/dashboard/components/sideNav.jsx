@@ -5,9 +5,11 @@ import  upLogout  from "../../../assets/Featured icon.svg";
 import  sideLogout  from "../../../assets/sideLogout.svg";
 import { useNavigate } from "react-router-dom";
 import { DashboardBrand } from "./brand";
+import { SelectInterest } from "./uploadingProcess/selectInterest";
 
 export const SideNav=({
-    activeRoute
+    activeRoute,
+    setModal
 })=>{
     const navigate = useNavigate();
 
@@ -80,7 +82,21 @@ export const SideNav=({
                     })
                 }
             </div>
-            <div className="d-flex flex-column align-items-center p-3 uploadBg ms-4 me-3 border-bottom">
+            <div 
+                className="d-flex flex-column align-items-center p-3 uploadBg ms-4 me-3 border-bottom"
+                data-bs-toggle="modal" 
+                data-bs-target="#staticBackdrop"
+                onClick={()=>{
+                    setModal({
+                        size:null,
+                        body:<SelectInterest
+                            setModal={setModal}
+                        />
+                    })
+                    console.log("hello")
+                }
+                }
+            >
                 <div>
                     <img 
                         src={upLogout}

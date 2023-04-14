@@ -6,7 +6,7 @@ export const IconTag=({
     style
 })=>{
     return(
-        <div className="d-flex">
+        <div className="d-flex baseline">
             <span className="me-2">
                 <img
                     src={icon}

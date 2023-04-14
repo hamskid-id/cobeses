@@ -74,7 +74,7 @@ export const InputField=({
             break;
             default :
                 return(
-                    <div className="w-100 mb-2 relative">
+                    <div className=" d-flex flex-column align-items-start w-100 mb-2 relative">
                         <label
                             className={labelStyle}
                             htmlFor={name}>

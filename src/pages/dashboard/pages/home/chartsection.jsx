@@ -1,28 +1,55 @@
 import { Text } from "../../../../elements/text"
 import { BarChart } from "../../components/chart/barchart"
 import { LineChart } from "../../components/chart/linechart"
+import { TitledChart } from "../../components/titledChart"
 
 export const ChartSection=()=>{
+    const data=[
+        {
+            name:"Juin",
+            number:0
+        },
+        {
+            name:"Jan",
+            number:100
+        },{
+            name:"Fev",
+            number:200
+        },{
+            name:"Mar",
+            number:300
+        },{
+            name:"Avr",
+            number:400
+        },{
+            name:"Peut",
+            number:500
+        }
+    ]
+
     return(
         <div className="d-flex wrap w-100 mb-5">
-            <div className="wt-50 p-1">
-                <Text
-                    title="Vos gains"
-                    style="fs-7 fw-600 mb-1 text-start"
-                />
-                <div className="chart">
-                    <LineChart/>
-                </div>
-            </div>
-            <div className="wt-50 p-1">
-                <Text
-                    title="Votre habitude de lecture"
-                    style="fs-7 fw-600 mb-1 text-start"
-                />
-                <div className="chart">
-                    <BarChart/>
-                </div>
-            </div>
+            <TitledChart
+                text="Vos gains"
+                chart={ 
+                    <LineChart
+                        data={data}
+                        label="Vos gains"
+                        borderColor='#3375FF' 
+                        backgroundColor="#ADD8E6"
+                    />}
+            />
+             <TitledChart
+                text="Votre habitude de lecture"
+                chart={ 
+                    <BarChart
+                        data={data}
+                        label="Vos gains"
+                        borderColor="#3375FF"
+                        backgroundColor="#3375FF"
+                    />
+                }
+            />
         </div>
     )
 }

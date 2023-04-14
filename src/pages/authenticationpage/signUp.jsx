@@ -44,7 +44,7 @@ export const SignUp=()=>{
                     type="name"
                     register={register}
                     errors={errors.name}
-                    style="p-3 light-greyInput mb-2 w-100 border border-white fs-6 br-8 ps-5"
+                    style="p-08 light-greyInput mb-2 w-100 border border-white fs-6 br-8 ps-5"
                 />
                 <InputField
                     inputIcon={icon}
@@ -53,7 +53,7 @@ export const SignUp=()=>{
                     type="email"
                     register={register}
                     errors={errors.email}
-                    style="p-3 light-greyInput mb-2 w-100 border border-white fs-6 br-8 ps-5"
+                    style="p-08 light-greyInput mb-2 w-100 border border-white fs-6 br-8 ps-5"
                 />
                 <InputField
                     inputIcon={Lock}
@@ -62,7 +62,7 @@ export const SignUp=()=>{
                     type="password"
                     register={register}
                     errors={errors.password}
-                    style="p-3 light-greyInput mb-2 w-100 border border-white fs-6 br-8 ps-5"
+                    style="p-08 light-greyInput mb-2 w-100 border border-white fs-6 br-8 ps-5"
                 />
                 <InputField
                     inputIcon={Lock}

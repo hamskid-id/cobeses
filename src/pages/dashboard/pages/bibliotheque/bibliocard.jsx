@@ -7,10 +7,16 @@ import invite from "../../../../assets/inviteIcon.svg";
 import member from "../../../../assets/memberIcon.svg";
 import attente from "../../../../assets/attenteIcon.svg"
 import { IconTag } from "../../components/icontag";
+import { EditLibrary } from "./editLibrary";
+import { useNavigate } from "react-router-dom";
+import { DeleteNotification } from "../../components/deleteNotification";
+import { SuccessNotification } from "../../components/successNotification";
 
-
-export const Bibliocard=()=>{
-    
+export const Bibliocard=({
+    setModalBody,
+    hideModal
+})=>{
+    const navigate = useNavigate();
     return(
         <div className="row">
             {
@@ -44,14 +50,28 @@ export const Bibliocard=()=>{
                                             aria-expanded="false"
                                         />
                                         <ul className="dropdown-menu py-2">
-                                            <li className="dropItem px-2 py-1">
+                                            <li 
+                                                className="dropItem px-2 py-1"
+                                                data-bs-toggle="modal" 
+                                                data-bs-target="#biblioBackdrop"
+                                                onClick={
+                                                    ()=>setModalBody(
+                                                        <EditLibrary
+                                                            defaultName={name}
+                                                        />
+                                                    )
+                                                }
+                                                >
                                                 <IconTag
                                                     text="Modifier la bibliothèque"
                                                     icon={edit}
                                                     style="fs-8 faint dropdown-item"
                                                 />
                                             </li>
-                                             <li className="dropItem px-2 py-1">
+                                             <li 
+                                                className="dropItem px-2 py-1"
+                                                onClick={()=>navigate(`/bibliothèque/library/${index}`)}
+                                            >
                                                 <IconTag
                                                     text="Livres de la bibliothèque"
                                                     icon={livre}
@@ -65,21 +85,41 @@ export const Bibliocard=()=>{
                                                     style="fs-8 faint dropdown-item"
                                                 />
                                             </li>
-                                            <li className="dropItem px-2 py-1">
+                                            <li 
+                                                className="dropItem px-2 py-1"
+                                                onClick={()=>navigate(`/bibliothèque/membre/invites/${index}`)}
+                                            >
                                                 <IconTag
                                                     text="membres invetes"
                                                     icon={member}
                                                     style="fs-8 faint dropdown-item"
                                                 />
                                             </li>
-                                             <li className="dropItem px-2 py-1">
+                                             <li 
+                                                className="dropItem px-2 py-1"
+                                                onClick={()=>navigate(`/bibliothèque/membre/invites/${index}`)}
+                                            >
                                                 <IconTag
                                                     text="Membres invités en attente"
                                                     icon={attente}
                                                     style="fs-8 faint dropdown-item"
                                                 />
                                             </li>
-                                            <li className="dropItem px-2 py-1">
+                                            <li 
+                                                className="dropItem px-2 py-1"
+                                                onClick={
+                                                    ()=>setModalBody(
+                                                        <DeleteNotification
+                                                            hideModal={hideModal}
+                                                            handleClick={()=>setModalBody(<SuccessNotification
+                                                                hideModal={hideModal}
+                                                            />)}
+                                                        />
+                                                    )
+                                                }
+                                                data-bs-toggle="modal" 
+                                                data-bs-target="#biblioBackdrop"
+                                            >
                                                 <IconTag
                                                     text="Supprimer la bibliothèque"
                                                     icon={deleteicon}
@@ -88,9 +128,6 @@ export const Bibliocard=()=>{
                                             </li>
                                         </ul>
                                     </div>
-                                    <span>
-                                        
-                                    </span>
                                 </div>
                             </div>
                         </div>

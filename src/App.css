@@ -2,9 +2,101 @@
   margin: 0 auto;
   text-align: center;
 }
+input[id="upload"]{
+  display:none;
+}
+.bgBlue{
+  background:#175CD3;
+}
+.baseline{
+  align-items: baseline;
+}
+.pagination{
+ gap:15px;
+ margin:1rem 0;
+}
+.page-item{
+ 
+    cursor: pointer;
+}
+.page-link{
+  border-radius: 50px;
+    padding:0.2rem 0.7rem;
+    font-size:12px;
+    border: grey 1px solid;
+    cursor: pointer;
+    color:black;
+}
+.page-item:last-child .page-link, .page-item:first-child .page-link{
+  background: #C39855;
+  color:white;
+  border-radius: 10px;
+}
+.page-item:first-child .page-link {
+  border-radius: 5px;
+}
+.page-item:last-child .page-link {
+  border-radius: 5px;
+}
+.darkform-check-input{
+  background-color: darkgray;
+  border:1px solid aliceblue;
+}
+.page-item.active .page-link{
+  background-color: #EFE9DC;
+  border:1px solid #EFE9DC;
+}
+.faintbg{
+  background-color: #F4F4F4;
+}
+.activeStatus{
+  color: #027A48;
+  background:  #ECFDF3;
+  border-radius: 16px;  
+  padding: 2px 8px;
+}
+.rejectedStatus{
+  color: #B42318;
+  background: #FEF3F2;
+  border-radius: 16px;  
+  padding: 2px 8px;
+}
+.pricecard{
+  height:57rem;
+}
+.orangeBg{
+  background-color: #F4623A;
+}
+.econ{
+  color:#039855;
+}
+.retire{
+  color:#B42318;
+}
+.unattended{
+  color: #175CD3;
+  background: #EFF8FF;
+  border-radius: 16px;  
+  padding: 2px 8px;
+}
+.lightPrimary{
+  background: #CCDCFF;
+  color: #6941C6;
+}
+.active{
+  border-color: transparent;
+  color: white;
+  min-width: 32px;
+}
 .brandImg{
   width: 59.14px;
   height: 50px;
+}
+.p-08{
+  padding:0.8rem;
+}
+.textArea{
+  height:6rem;
 }
 .dropdown-item {
   padding: 0;
@@ -47,6 +139,10 @@
   top: 1rem;
   left: 0.5rem;
 }
+.w-overflow{
+  width:100%;
+  overflow:auto;
+}
 .wt-50{
   width:50%;
 }
@@ -55,7 +151,11 @@
 }
 .activeroute{
   background: rgba(183, 154, 92, 0.08);
-  border-left: 2px solid #B79A5C;
+  border-left: 3px solid #B79A5C;
+}
+.yellowbuttom{
+  border-bottom:2px solid #B79A5C;
+  color:#B79A5C;
 }
 .uploadBg{
   background: #495569;
@@ -71,10 +171,13 @@
   width:60%;
 }
 .fs-7{
-  font-size:16px;
+  font-size:17px;
 }
 .dashboard-icon{
   width:0.9rem;
+}
+.ln-20{
+  line-height:20px;
 }
 .fw-600{
   font-weight: 600;
@@ -86,7 +189,7 @@
   line-height: 20px;
 }
 .fs-8{
-  font-size:12px;
+  font-size:13px;
 }
 .w-fitContent{
   width:fit-content;
@@ -173,6 +276,26 @@ h6{
 }
 .greyYellow{
   color:#C39855;
+}
+.interest{
+  background: #F2F4F7;
+  mix-blend-mode: multiply;
+  border-radius: 16px;
+}
+.uploadspace{
+  display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 16px 24px;
+gap: 4px;
+height: 20rem;
+background: #F9FAFB;
+border: 1px dashed #E4E7EC;
+border-radius: 8px;
+}
+.form-spacedescription{
+  height:6rem;
 }
 .bg-greyYellow{
   background-color: #C39855;
