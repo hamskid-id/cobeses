@@ -5,27 +5,32 @@ export const BtnIconTag=({
     text,
     textStyle,
     bgStyle,
+    handleClick,
     role,
     dataBsToggle,
-    ariaExpanded
+    ariaExpanded,
+    dataBsTarget
 })=>{
     return(
         <button 
+            onClick={handleClick}
             className={`${ bgStyle ? bgStyle:"btn bg-greyYellow btn-md"}`}
             role={role}
             data-bs-toggle={dataBsToggle}
+            data-bs-target={dataBsTarget}
             aria-expanded={ariaExpanded}
         >
-            <div className="d-flex justify-content-center">
+            <div className="d-flex justify-content-center align-items-center">
                 <span className="me-2">
                     <img
                         src={icon}
                         alt="object not found"
+                        className="btnicon"
                     />
                 </span>
                 <span>
                     <Text
-                        style={`${textStyle?textStyle:"fw-bold fs-8 text-white"}`}
+                        style={`${textStyle?textStyle:"fw-bold text-white btnfs"}`}
                         title={text}
                     />
                 </span>

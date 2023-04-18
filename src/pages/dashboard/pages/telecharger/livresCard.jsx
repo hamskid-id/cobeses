@@ -5,6 +5,7 @@ import rec4 from "../../../../assets/Rectangle 7.svg"
 import solidx from "../../../../assets/Solidx.svg"
 import calendar from "../../../../assets/calendar.svg"
 import userEdit from "../../../../assets/user-edit.svg"
+import edit from "../../../../assets/editicon.svg";
 import { IconTag } from "../../components/icontag"
 import { Text } from "../../../../elements/text"
 import deleteicon from "../../../../assets/deleteIcon.svg"
@@ -16,6 +17,8 @@ import { DeleteNotification } from "../../components/deleteNotification";
 import { SuccessNotification } from "../../components/successNotification";
 import bookOpen from "../../../../assets/Book-open.svg";
 import { useNavigate } from "react-router-dom"
+import { EditLibraryBooksDetails } from "./editlibrarybookdetails"
+import { Pagination } from "../../components/pagination"
 
 export const LivresCard=({
     setModalBody,
@@ -65,10 +68,12 @@ export const LivresCard=({
                         <div 
                             className="col-md-3 col-sm-6 col-xs-12"
                             key={index}
-                            onClick={()=>navigate(`/télécharger/details/${index}`)}
                         >
-                            <div className="p-3 br-8 border m-3">
-                                <div className="mb-3">
+                            <div className="p-3 br-8 border m-3 btn">
+                                <div 
+                                    className="mb-3"
+                                    onClick={()=>navigate(`/télécharger/details/${index}`)}
+                                >
                                     <img 
                                         src={img}
                                         alt="oject not found"
@@ -123,6 +128,22 @@ export const LivresCard=({
                                         <ul className="dropdown-menu py-2">
                                             <li 
                                                 className="dropItem px-2 py-1"
+                                                data-bs-toggle="modal" 
+                                                data-bs-target="#biblioBackdrop"
+                                                onClick={
+                                                    ()=>setModalBody(
+                                                        <EditLibraryBooksDetails/>
+                                                    )
+                                                }
+                                                >
+                                                <IconTag
+                                                    text="Modifier les détails du livre"
+                                                    icon={edit}
+                                                    style="fs-8 faint dropdown-item"
+                                                />
+                                            </li>
+                                            <li 
+                                                className="dropItem px-2 py-1"
                                                 onClick={()=>navigate(`/bibliothèque/membre/invites/${index}`)}
                                             >
                                                 <IconTag
@@ -150,11 +171,13 @@ export const LivresCard=({
                                                             handleClick={()=>setModalBody(<SuccessNotification
                                                                 hideModal={hideModal}
                                                             />)}
+                                                            title="Supprimer la bibliothèque"
+                                                            subTitle="Voulez-vous vraiment supprimer cette bibliothèque? Cela supprimera tous les membres dela bibliothèque"
                                                         />
                                                     )
                                                 }
                                                 data-bs-toggle="modal" 
-                                                data-bs-target="#staticBackdrop"
+                                                data-bs-target="#biblioBackdrop"
                                             >
                                                 <IconTag
                                                     text="Supprimer la bibliothèque"
@@ -171,22 +194,8 @@ export const LivresCard=({
                 })
             }
         </div>
-             <ReactPaginate
-                breakLabel="..."
-                nextLabel="next"
-                onPageChange={handlePageClick}
-                pageRangeDisplayed={5}
-                pageCount={30}
-                previousLabel="previous"
-                renderOnZeroPageCount={null}
-                containerClassName="pagination justify-content-center"
-                pageClassName="page-item"
-                pageLinkClassName="page-link"
-                previousClassName="page-item"
-                previousLinkClassName="page-link"
-                nextClassName="page-item"
-                nextLinkClassName="page-link"
-                activeClassName="active"
+             <Pagination
+                handlePageClick={handlePageClick}
             />
         </div>
         

@@ -1,7 +1,11 @@
+import { LecturesChart } from "./lectureChart"
+import { LivresCard } from "./livresCard"
+
 export const HabitudeContent=()=>{
     return(
         <div>
-            Hello chargre
+           <LecturesChart/>
+           <LivresCard/>
         </div>
     )
 }

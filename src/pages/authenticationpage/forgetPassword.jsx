@@ -6,9 +6,10 @@ import Lock from "../../assets/Lock.svg";
 import {Btn} from "../../elements/button";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
+import { useNavigate } from "react-router-dom";
 
 export const ForgetPassword=()=>{
-
+    const navigate = useNavigate()
     const validationSchema = Yup.object().shape({
         password: Yup.string()
             .required('Password is required')
@@ -74,6 +75,7 @@ export const ForgetPassword=()=>{
                 <Text
                     title="retour connexion"
                     style="fs-6 mb-1 greyYellow text-center"
+                    handleClick={()=>navigate("/auth/login")}
                 />
             </form>
         </Authlayout>

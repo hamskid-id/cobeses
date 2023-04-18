@@ -1,8 +1,9 @@
 import successicon from "../../../../assets/warno.svg"
 import { Btn } from "../../../../elements/button"
 import { Text } from "../../../../elements/text"
+import { SuccessFull } from "./uploadSuccesful"
 
-export const CoverConfirmation=()=>{
+export const CoverConfirmation=({setModal})=>{
     return(
         <div className="d-flex flex-column align-items-center p-2">
             <div className="mb-2">
@@ -21,13 +22,22 @@ export const CoverConfirmation=()=>{
                 />
             </div>
             <div className="w-100">
-                <Btn
-                    style="btn bg-greyYellow btn-md w-100 text-white mb-2 fs-8"
-                    value="Ajouter une couverture"
-                />
+                <div>
+                    <label
+                        htmlFor="upload"
+                        className="btn bg-greyYellow btn-md w-100 text-white mb-2 fs-8"
+                    >
+                        Ajouter une couverture
+                    </label>
+                    <input type="file" id="upload" name="upload" accept="*/"/>
+                </div>
                 <Btn
                     style="btn greyYellow btn-md border w-100 fs-8"
                     value="Continuer"
+                    handleClick={()=>setModal({
+                        size:"small",
+                        body:<SuccessFull/>
+                    })}
                 />
             </div>
         </div>

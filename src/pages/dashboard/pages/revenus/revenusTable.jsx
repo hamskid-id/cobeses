@@ -1,14 +1,17 @@
-import { useState } from "react"
+import Index from "../../../../assets/Table header.svg"
+import  dashicon  from "../../../../assets/dash-icon.svg"
+import Search from "../../../../assets/searchIcon.svg"
+import { BtnIconTag } from "../../components/btnIconTag"
 import { Text } from "../../../../elements/text"
-import  Avatar  from "../../../../assets/tabAvatar.svg"
-import { Btn } from "../../../../elements/button";
-import { DeleteNotification } from "../../components/deleteNotification";
-import { SuccessNotification } from "../../components/successNotification";
-import { Pagination } from "../../components/pagination";
+import { useState } from "react"
+import { DeleteNotification } from "../../components/deleteNotification"
+import { SuccessNotification } from "../../components/successNotification"
+import { Btn } from "../../../../elements/button"
+import { Pagination } from "../../components/pagination"
 
-export const MemberTable=({
-    setModalBody,
-    hideModal
+export const RevenusTable=({
+    hideModal,
+    setModalBody
 })=>{
     const[
         itemToDelete,
@@ -17,31 +20,31 @@ export const MemberTable=({
 
     const data=[
         {
-            name:"Olivia Rhye",
-            email:"olivia@untitledui.com",
-            status1:"Accepté",
-            status2:"Retirer",
-            username:"@olivia"
+            idDeLivre:"X67y-9yu",
+            TitreDeLivre:"Introduction to Algebra",
+            HeuresDeLecture:"20.00hrs",
+            MontantGagné:"$30.09",
+            DatePubliée:"2023-02-18"
         },
         {
-            name:"Olivia Rhye",
-            email:"olivia@untitledui.com",
-            status1:"En attente",
-            status2:"Retirer",
-            username:"@olivia"
+            idDeLivre:"X67y-9yu",
+            TitreDeLivre:"Introduction to Algebra",
+            HeuresDeLecture:"10.00hrs",
+            MontantGagné:"$30.09",
+            DatePubliée:"2023-02-18"
         },
         {
-            name:"Olivia Rhye",
-            email:"olivia@untitledui.com",
-            status1:"Rejeté",
-            status2:"Retirer",
-            username:"@olivia"
+            idDeLivre:"X67y-9yu",
+            TitreDeLivre:"Introduction to Algebra",
+            HeuresDeLecture:"10.00hrs",
+            MontantGagné:"Accès révoqué",
+            DatePubliée:"2023-02-18"
         },{
-            name:"Olivia Rhye",
-            email:"olivia@untitledui.com",
-            status1:"Active",
-            status2:"Retirer",
-            username:"@olivia"
+            idDeLivre:"X67y-9yu",
+            TitreDeLivre:"Introduction to Algebra",
+            HeuresDeLecture:"20.00hrs",
+            MontantGagné:"$30.09",
+            DatePubliée:"2023-02-18"
         }
     ]
 
@@ -58,7 +61,6 @@ export const MemberTable=({
                 return newArray
             }
         })
-        
     }
 
     const handlePageClick = (event) => {
@@ -66,21 +68,15 @@ export const MemberTable=({
           `User requested page number ${event.selected}`
         );
       };
-
-    return(
-        <div>
-            <div className="w-overflow">
+    
+      return(
+        <div className="border br-8 my-4">
+            <div className="w-overflow my-3">
                 <table className=" table table-striped table-hover table-bordered table-responsive caption-top mb-3">
-                    <caption>
-                        <div className="d-flex wrap justify-content-between">
-                            <div>
-                                <span className="me-2 fs-8 fw-600">
-                                    Utilisateurs de la bibliothèque 
-                                </span>
-                                <Text
-                                    style=" px-2 fs-8 badge lightPrimary"
-                                    title={data.length}
-                                />
+                <caption>
+                        <div className="d-flex wrap justify-content-between p-2 mb-1">
+                            <div className="me-2 fs-8 fw-600">
+                                Aperçu des gains
                             </div>
                             <div>
                                 <Btn
@@ -103,6 +99,28 @@ export const MemberTable=({
                                 />
                             </div>
                         </div>
+                        <div className="d-flex wrap border py-2 px-2 mb-1">
+                            <div className="relative wt-50 me-5  mb-1">
+                                <input 
+                                    type="text"
+                                    className="p-2 border br-8 ps-5 w-100 btn text-start"
+                                    placeholder="Recherche"
+                                />
+                                <img 
+                                    src={Search}
+                                    className="searchicon"
+                                    alt="object 20.00hrst found"
+                                />
+                            </div>
+                            <div className="mb-1">
+                                <BtnIconTag
+                                    icon={dashicon}
+                                    text="Filter"
+                                    bgStyle="bg-white border btn br-8"
+                                    textStyle="text-dark btnfs"
+                                />
+                            </div>
+                        </div>
                     </caption>
                     <thead>
                         <tr>
@@ -115,30 +133,38 @@ export const MemberTable=({
                             <th 
                                 scope="col"
                                 className="fs-8 text-start"
-                            >Nom</th>
+                            ><img src={Index} alt="object 20.00hrst found"/></th>
                             <th 
                                 scope="col"
                                 className="fs-8 text-start"
-                            >Adresse e-mail</th>
+                            >ID de livre</th>
                             <th 
                                 scope="col"
                                 className="fs-8 text-start"
-                            >Statut</th>
+                            >Titre de livre</th>
                             <th 
                                 scope="col"
                                 className="fs-8 text-start"
-                            >Statut</th>
+                            >Heures de lecture</th>
+                            <th 
+                                scope="col"
+                                className="fs-8 text-start"
+                            >Montant gagné</th>
+                            <th 
+                                scope="col"
+                                className="fs-8 text-start"
+                            >Date publiée</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
                             data?.map((person,index)=>{
                                     const{
-                                        name,
-                                        email,
-                                        status1,
-                                        status2,
-                                        username
+                                        idDeLivre,
+                                        TitreDeLivre,
+                                        HeuresDeLecture,
+                                        MontantGagné,
+                                        DatePubliée
                                     } = person
                                     return(
                                         <tr key={index}>
@@ -149,34 +175,19 @@ export const MemberTable=({
                                                     onChange={(e)=>handleChange(e,{index})}
                                                 />
                                             </td>
-                                            <td>
-                                                <div className="d-flex align-items-center">
-                                                    <span className="me-2">
-                                                        <img
-                                                            src={Avatar}
-                                                            alt="object not found"
-                                                        />
-                                                    </span>
-                                                    <span>
-                                                        <Text
-                                                            style="fw-bold fs-8 text-start ln-20"
-                                                            title={name}
-                                                        />
-                                                        <Text
-                                                            style="faint fs-8 text-start ln-20"
-                                                            title={username}
-                                                        />
-                                                    </span>
-                                                </div>
+                                            <td className="fs-8 text-start">
+                                                {index+1}
                                             </td>
-                                            <td  className="fs-8 text-start">{email}</td>
                                             <td>
                                                 <Text
-                                                    title={status1}
-                                                    style={`${(status1 === "Accepté"||status1 === "Active")?"activeStatus":status1 === "Rejeté"?"rejectedStatus":"unattended"} w-fitContent fs-8 text-start`}
+                                                    style="fw-bold fs-8 text-start ln-20"
+                                                    title={idDeLivre}
                                                 />
                                             </td>
-                                            <td  className="fs-8 text-start retire">{status2}</td>
+                                            <td  className="fs-8 text-start">{TitreDeLivre}</td>
+                                            <td  className="fs-8 text-start">{HeuresDeLecture}</td>
+                                            <td  className="fs-8 text-start">{MontantGagné}</td>
+                                            <td  className="fs-8 text-start">{DatePubliée}</td>
                                         </tr>
                                     )
                                 }
@@ -190,7 +201,7 @@ export const MemberTable=({
                 data.length === 0 &&(
                     <Text
                         style="text-center fs-5"
-                        title="No one has being invited"
+                        title="Empty"
                     />
                 )
             }

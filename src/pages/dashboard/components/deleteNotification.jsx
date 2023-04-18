@@ -2,7 +2,7 @@ import deleteicon from "../../../assets/delnoticon.svg"
 import { Btn } from "../../../elements/button"
 import { Text } from "../../../elements/text"
 
-export const DeleteNotification=({handleClick,hideModal})=>{
+export const DeleteNotification=({handleClick,hideModal,title,subTitle})=>{
     const hide=()=>{
         hideModal.current.click()
     }
@@ -15,13 +15,17 @@ export const DeleteNotification=({handleClick,hideModal})=>{
             </div>
             <div className="mb-2">
                 <Text
-                    title="Supprimer la bibliothèque"
+                    title={title}
                     style="fw-600 fs-6"
                 />
-                <Text
-                    title="Voulez-vous vraiment supprimer cette bibliothèque? Cela supprimera tous les membres dela bibliothèque"
-                    style="fs-8 ln-20 mb-2"
-                />
+                {
+                    subTitle &&(
+                        <Text
+                            title={subTitle}
+                            style="fs-8 ln-20 mb-2 text-dark"
+                        />
+                    )
+                }
             </div>
             <div className="d-flex justify-content-between w-100">
                 <Btn

@@ -2,6 +2,8 @@ export const Btn =({
     style,
     value,
     handleClick,
+    databstoggle, 
+    databstarget,
     loadingStatus,
 })=>{
     return (
@@ -20,6 +22,8 @@ export const Btn =({
                     </button>
                     ):(
                         <button 
+                            data-bs-toggle={databstoggle}
+                            data-bs-target={databstarget}
                             className={style} 
                             onClick={handleClick}>
                                 {value}

@@ -14,7 +14,7 @@ export const SideNav=({
     const navigate = useNavigate();
 
     return(
-        <div className="py-3 border dashboardSide">
+        <div className="py-3 border dashboardSide hideOnMobile">
             <div className="mb-2">
                 <DashboardBrand/>
             </div>
@@ -50,7 +50,7 @@ export const SideNav=({
                     })
                 }
             </div>
-            <div className="d-flex flex-column align-items-start mb-3">
+            <div className="d-flex flex-column align-items-start mb-3 mt-5">
                 {
                     supportRoutes.map((route,index)=>{
                         const{

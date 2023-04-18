@@ -2,6 +2,59 @@
   margin: 0 auto;
   text-align: center;
 }
+.hideOndesktop{
+  display:none;
+}
+.Revenustatbox{
+  width:15rem;
+  height:11rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+  background: #FFFFFF;
+  border: 1px solid #E4E7EC;
+  border-radius: 12px;
+  gap: 24px;
+}
+.pdx-4 {
+  padding-right: 1.5rem!important;
+  padding-left: 1.5rem!important;
+}
+.nav{
+  display:flex;
+}
+.no-wrap{
+  flex-wrap: nowrap;
+}
+.sahdowgrey{
+  background-color: #B79A5C;
+}
+.blue{
+  background-color: #1570EF;
+}
+.green{
+  background-color: #039855;
+}
+.bg-grey{
+  background:grey;
+  color:white;
+}
+.uploadspace{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  gap: 4px;
+  height: 20rem;
+  background: #F9FAFB;
+  border: 1px dashed #E4E7EC;
+  border-radius: 8px;
+  }
+  .upload-space-cover{
+    padding: 16px 9rem;
+  }
 input[id="upload"]{
   display:none;
 }
@@ -11,8 +64,10 @@ input[id="upload"]{
 .baseline{
   align-items: baseline;
 }
+
 .pagination{
  gap:15px;
+ flex-wrap: wrap;
  margin:1rem 0;
 }
 .page-item{
@@ -38,6 +93,9 @@ input[id="upload"]{
 .page-item:last-child .page-link {
   border-radius: 5px;
 }
+.sideNav{
+  width:14rem;
+}
 .darkform-check-input{
   background-color: darkgray;
   border:1px solid aliceblue;
@@ -53,13 +111,21 @@ input[id="upload"]{
   color: #027A48;
   background:  #ECFDF3;
   border-radius: 16px;  
-  padding: 2px 8px;
+  padding: 0px 8px;
+}
+.statbosxsubscover{
+background: rgba(255, 255, 255, 0.3);
+border: 1px solid rgba(255, 255, 255, 0.5);
+backdrop-filter: blur(12px);
+border-radius: 8px;
+padding: 16px;
+width:100%
 }
 .rejectedStatus{
   color: #B42318;
   background: #FEF3F2;
   border-radius: 16px;  
-  padding: 2px 8px;
+  padding: 0px 8px;
 }
 .pricecard{
   height:57rem;
@@ -77,7 +143,7 @@ input[id="upload"]{
   color: #175CD3;
   background: #EFF8FF;
   border-radius: 16px;  
-  padding: 2px 8px;
+  padding: 0px 8px;
 }
 .lightPrimary{
   background: #CCDCFF;
@@ -139,6 +205,15 @@ input[id="upload"]{
   top: 1rem;
   left: 0.5rem;
 }
+.searchicon{
+  position: absolute;
+  top: 0.8rem;
+  left: 0.5rem;
+}
+.statbox{
+  width:21rem;
+  padding: 1rem;
+}
 .w-overflow{
   width:100%;
   overflow:auto;
@@ -176,6 +251,9 @@ input[id="upload"]{
 .dashboard-icon{
   width:0.9rem;
 }
+.btnicon{
+  width: 0.7rem;
+}
 .ln-20{
   line-height:20px;
 }
@@ -199,6 +277,7 @@ input[id="upload"]{
 }
 .row{
   padding-right: 0;
+  --bs-gutter-x: 0rem;
   padding-left: 0;
 }
 .dashboardSide{
@@ -282,24 +361,38 @@ h6{
   mix-blend-mode: multiply;
   border-radius: 16px;
 }
-.uploadspace{
-  display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-padding: 16px 24px;
-gap: 4px;
-height: 20rem;
-background: #F9FAFB;
-border: 1px dashed #E4E7EC;
-border-radius: 8px;
-}
+
 .form-spacedescription{
   height:6rem;
 }
 .bg-greyYellow{
   background-color: #C39855;
 }
+
+@media only screen  and (max-width:996px){
+  .overflowBtnText{
+    width:8rem
+  }
+  .w-230{
+    width: 100%;
+  }
+  .hideOnMobile{
+    display:none;
+  }
+  .mobilenav{
+    display: flex;
+  }
+  .no-wrap{
+    flex-wrap: wrap;
+  }
+  .col-md-10{
+    width:100%;
+  }
+  /* .row{
+    flex-direction:column;
+  } */
+}
+
 
 @keyframes logo-spin {
   from {
@@ -337,6 +430,10 @@ border-radius: 8px;
 }
 }
 @media only screen and (max-width:768px){
+  .pdx-4 {
+    padding-right: 1rem!important;
+    padding-left: 1rem!important;
+  }
   .wt-30{
     width:70%;
   }
@@ -351,6 +448,20 @@ border-radius: 8px;
 }
 }
 @media only screen and (max-width:425px){
+  .Revenustatbox {
+    width: 12rem;
+    height: 10rem;
+  }
+  .searchicon {
+    top: 0.4rem;
+}
+  .statbox {
+      width: 10rem;
+      padding: 1rem;
+  }
+  .btnfs{
+    font-size:0.6rem;
+  }
   .wt-30{
     width:100%;
   }

@@ -58,7 +58,7 @@ export const BiblioCard=({
                             className="col-md-3 col-sm-6 col-xs-12"
                             key={index}
                         >
-                            <div className="p-3 br-8 border m-3">
+                            <div className="p-3 br-8 border m-3 btn">
                                 <div className="mb-3">
                                     <img 
                                         src={img}
@@ -142,6 +142,8 @@ export const BiblioCard=({
                                                             handleClick={()=>setModalBody(<SuccessNotification
                                                                 hideModal={hideModal}
                                                             />)}
+                                                            title="Supprimer la bibliothèque"
+                                                            subTitle="Voulez-vous vraiment supprimer cette bibliothèque? Cela supprimera tous les membres dela bibliothèque"
                                                         />
                                                     )
                                                 }

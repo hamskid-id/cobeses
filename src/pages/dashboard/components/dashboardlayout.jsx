@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Modal } from "../../../components/modal/modal"
 import { Header } from "./header"
 import { SideNav } from "./sideNav"
+import { MobileNav } from "./mobileNav";
 
 export const Dashboardlayout=({
     BoardChildren,
@@ -16,8 +17,8 @@ export const Dashboardlayout=({
     });
     return(
         <>
-            <div className="row dashboardLayout dashboardSide">
-                <div className="col-md-2">
+            <div className="row dashboardLayout dashboardSide no-wrap">
+                <div className="col-md-2 w-230">
                     <SideNav
                         activeRoute={activeRoute}
                         setModal={setModal}
@@ -29,10 +30,11 @@ export const Dashboardlayout=({
                         xlarge={modal.size==="xlarge"?true:false}
                     />
                 </div>
-                <div className="col-md-10 border dashboardSide">
+                <div className="col-md-10 dashboardSide">
                     <div>
+                        <MobileNav/>
                         <Header/>
-                        <div className="px-4">
+                        <div className="pdx-4">
                             {BoardChildren}
                         </div>
                     </div>

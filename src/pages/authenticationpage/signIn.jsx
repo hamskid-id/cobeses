@@ -5,9 +5,10 @@ import { useForm } from "react-hook-form";
 import Lock from "../../assets/Lock.svg";
 import icon from "../../assets/icon.svg"; 
 import {Btn} from "../../elements/button";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 export const SignIn=()=>{
+    const navigate = useNavigate()
     const { 
         register, 
         handleSubmit, 
@@ -70,6 +71,7 @@ export const SignIn=()=>{
                 <Text
                     title="Mot de passe oublié?"
                     style="fs-6 mb-1 greyYellow text-center"
+                    handeClick={()=>navigate("/auth/password/forget")}
                 />
                 <Text
                     title="Ou"

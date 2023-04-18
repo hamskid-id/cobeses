@@ -39,13 +39,12 @@ export const routes=[
         icon:uti,
         activeIcon:"",
         location:"/utilisateurs"
-    },
-    {
+    },{
         name:"Revenus",
         icon:reve,
         activeIcon:"",
         location:"/revenus"
-    },
+    }
 ]
 
 export const supportRoutes=[

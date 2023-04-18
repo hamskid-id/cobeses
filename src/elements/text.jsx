@@ -1,6 +1,7 @@
 export const Text=({
     style,
-    title
+    title,
+    handeClick
 })=>{
-    return <h6 className={style}>{title}</h6>
+    return <h6 className={style} onClick={handeClick}>{title}</h6>
 }

@@ -1,14 +1,17 @@
-import { useState } from "react"
+import Index from "../../../../assets/Table header.svg"
+import  dashicon  from "../../../../assets/dash-icon.svg"
+import Search from "../../../../assets/searchIcon.svg"
+import { BtnIconTag } from "../../components/btnIconTag"
 import { Text } from "../../../../elements/text"
-import  Avatar  from "../../../../assets/tabAvatar.svg"
-import { DeleteNotification } from "../../components/deleteNotification";
-import { SuccessNotification } from "../../components/successNotification";
-import { Btn } from "../../../../elements/button";
-import { Pagination } from "../../components/pagination";
+import { useState } from "react"
+import { DeleteNotification } from "../../components/deleteNotification"
+import { SuccessNotification } from "../../components/successNotification"
+import { Btn } from "../../../../elements/button"
+import { Pagination } from "../../components/pagination"
 
-export const MemberActionTable=({
-    setModalBody,
-    hideModal
+export const Table=({
+    hideModal,
+    setModalBody
 })=>{
     const[
         itemToDelete,
@@ -17,33 +20,34 @@ export const MemberActionTable=({
 
     const data=[
         {
-            name:"Olivia Rhye",
+            name:"Samuel Alfred",
             email:"olivia@untitledui.com",
-            status1:"Accepté",
-            status2:"Retirer",
-            username:"@olivia"
+            CanPublish:"No",
+            action:"Créer un éditeur",
+            fair:true
         },
         {
-            name:"Olivia Rhye",
+            name:"Samuel Alfred",
             email:"olivia@untitledui.com",
-            status1:"En attente",
-            status2:"Retirer",
-            username:"@olivia"
+            CanPublish:"Yes",
+            action:"Créer un éditeur",
+            fair:true
         },
         {
-            name:"Olivia Rhye",
+            name:"Samuel Alfred",
             email:"olivia@untitledui.com",
-            status1:"Rejeté",
-            status2:"Retirer",
-            username:"@olivia"
+            CanPublish:"Yes",
+            action:"Accès révoqué",
+            fair:false
         },{
-            name:"Olivia Rhye",
+            name:"Samuel Alfred",
             email:"olivia@untitledui.com",
-            status1:"Active",
-            status2:"Retirer",
-            username:"@olivia"
+            CanPublish:"No",
+            action:"Créer un éditeur",
+            fair:false
         }
     ]
+
 
     const handleChange=(e,{index})=>{
         const newArray = itemToDelete.filter(item=>item!==index)
@@ -65,13 +69,13 @@ export const MemberActionTable=({
           `User requested page number ${event.selected}`
         );
       };
-
-    return(
-        <div>
-            <div className="w-overflow">
+    
+      return(
+        <div className="border br-8 my-4">
+            <div className="w-overflow my-3">
                 <table className=" table table-striped table-hover table-bordered table-responsive caption-top mb-3">
                 <caption>
-                        <div className="d-flex wrap justify-content-between">
+                        <div className="d-flex wrap justify-content-between p-2 mb-1">
                             <div>
                                 <span className="me-2 fs-8 fw-600">
                                     Utilisateurs de la bibliothèque 
@@ -102,6 +106,28 @@ export const MemberActionTable=({
                                 />
                             </div>
                         </div>
+                        <div className="d-flex wrap border py-2 px-2 mb-1">
+                            <div className="relative wt-50 me-5  mb-1">
+                                <input 
+                                    type="text"
+                                    className="p-2 border br-8 ps-5 w-100 btn text-start"
+                                    placeholder="search"
+                                />
+                                <img 
+                                    src={Search}
+                                    className="searchicon"
+                                    alt="object not found"
+                                />
+                            </div>
+                            <div className="mb-1">
+                                <BtnIconTag
+                                    icon={dashicon}
+                                    text="Filter"
+                                    bgStyle="bg-white border btn br-8"
+                                    textStyle="text-dark"
+                                />
+                            </div>
+                        </div>
                     </caption>
                     <thead>
                         <tr>
@@ -114,11 +140,19 @@ export const MemberActionTable=({
                             <th 
                                 scope="col"
                                 className="fs-8 text-start"
+                            ><img src={Index} alt="object not found"/></th>
+                            <th 
+                                scope="col"
+                                className="fs-8 text-start"
                             >Nom</th>
                             <th 
                                 scope="col"
                                 className="fs-8 text-start"
                             >Adresse e-mail</th>
+                            <th 
+                                scope="col"
+                                className="fs-8 text-start"
+                            >Can Publish</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -127,7 +161,9 @@ export const MemberActionTable=({
                                     const{
                                         name,
                                         email,
-                                        username
+                                        CanPublish,
+                                        action,
+                                        fair
                                     } = person
                                     return(
                                         <tr key={index}>
@@ -138,27 +174,19 @@ export const MemberActionTable=({
                                                     onChange={(e)=>handleChange(e,{index})}
                                                 />
                                             </td>
-                                            <td>
-                                                <div className="d-flex align-items-center">
-                                                    <span className="me-2">
-                                                        <img
-                                                            src={Avatar}
-                                                            alt="object not found"
-                                                        />
-                                                    </span>
-                                                    <span>
-                                                        <Text
-                                                            style="fw-bold fs-8 text-start ln-20"
-                                                            title={name}
-                                                        />
-                                                        <Text
-                                                            style="faint fs-8 text-start ln-20"
-                                                            title={username}
-                                                        />
-                                                    </span>
-                                                </div>
+                                            <td className="fs-8 text-start">
+                                                {index+1}
                                             </td>
-                                            <td className="fs-8 text-start">{email}</td>
+                                            <td>
+                                                <Text
+                                                    style="fw-bold fs-8 text-start ln-20"
+                                                    title={name}
+                                                />
+                                            </td>
+                                            <td  className="fs-8 text-start">{email}</td>
+                                            <td  className="fs-8 text-start">{CanPublish}</td>
+                                            <td  className={`${action === "Accès révoqué"?"rejectedStatus":"greyYellow"} fs-8 text-start`}>{action}</td>
+                                            {fair?<td  className="fs-8 text-start text-primary">Faire administrateur</td>:<td  className="fs-8 text-start"></td>}
                                         </tr>
                                     )
                                 }
@@ -172,7 +200,7 @@ export const MemberActionTable=({
                 data.length === 0 &&(
                     <Text
                         style="text-center fs-5"
-                        title="No data"
+                        title="Empty"
                     />
                 )
             }
@@ -186,5 +214,6 @@ export const MemberActionTable=({
                 }
             </div>
         </div>
+
     )
 }

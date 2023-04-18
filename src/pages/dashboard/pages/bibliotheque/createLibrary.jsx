@@ -1,4 +1,4 @@
-
+import { My } from "../../../../assets/my"
 import editicon from "../../../../assets/editlib.svg"
 import editupload from "../../../../assets/editup.svg"
 import { Text } from "../../../../elements/text"
@@ -6,9 +6,7 @@ import { Btn } from "../../../../elements/button"
 import { InputField } from "../../../../components/customFormField"
 import { useForm } from "react-hook-form";
 
-export const EditLibrary=({
-    defaultName
-})=>{
+export const CreateLibrary=()=>{
 
     const SubmitHandler =({
         name,
@@ -32,11 +30,11 @@ export const EditLibrary=({
             />
             <Text
                 style="fw-600 fs-6"
-                title="Modifier la bibliothèque"
+                title="Créer une bibliothèque"
             />
              <Text
                 style="faint mb-1 fs-8"
-                title="Modifier les détails de cette bibliothèque"
+                title="Créer les détails de cette bibliothèque"
             />
             <form  
                 onSubmit={handleSubmit(SubmitHandler)} 
@@ -48,7 +46,6 @@ export const EditLibrary=({
                     register={register}
                     labelStyle="fs-8 fw-600 text-start"
                     errors={errors.name}
-                    defaultValue={defaultName}
                     style="p-08 border mb-2 w-100 border fs-8 br-8"
                     labelTitle="Nom de la bibliothèque*"
                 />
@@ -84,7 +81,7 @@ export const EditLibrary=({
                     <input id="upload" type="file" accept="image/*"/>
                 </div>
                 <Btn
-                    value="Sauvegarder les modifications"
+                    value="Sauvegarder bibliothèque"
                     style="w-100 btn btn-md bg-greyYellow mb-2 p-08 text-white fs-8"
                 />
             </form>

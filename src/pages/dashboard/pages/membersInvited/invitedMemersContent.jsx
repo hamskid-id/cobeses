@@ -1,12 +1,19 @@
-import { useState } from "react"
+import { useRef, useState } from "react"
 import { MemberActionTable } from "./actiontable"
 import { MemberTable } from "./membertable"
+import { Modal } from "../../../../components/modal/modal"
 
 export const InvitedMembersContent=()=>{
     const[
         activeView,
         setActiveView
-    ]=useState({name:"Tous les membres invités",component:<MemberTable/>})
+    ]=useState({name:"Tous les membres invités",component:""})
+    const[
+        modalbody,
+        setModalBody
+    ]=useState("");
+
+    const hideModal=useRef(null);
     return(
         <div>
             <div className="d-flex overflowx mb-3">
@@ -14,18 +21,30 @@ export const InvitedMembersContent=()=>{
                     [
                         {
                             name:"Tous les membres invités",
-                            component:<MemberTable/>
+                            component:<MemberTable
+                                setModalBody={setModalBody}
+                                hideModal={hideModal}
+                            />
                         },
                         {
                             name:"Accepté",
-                            component:<MemberActionTable/>
+                            component:<MemberActionTable
+                                 setModalBody={setModalBody}
+                                 hideModal={hideModal}
+                            />
                         },
                         {
                             name:"En attente",
-                            component:<MemberActionTable/>
+                            component:<MemberActionTable
+                                 setModalBody={setModalBody}
+                                 hideModal={hideModal}
+                            />
                         },{
                             name:"Rejeté",
-                            component:<MemberActionTable/>
+                            component:<MemberActionTable
+                                 setModalBody={setModalBody}
+                                 hideModal={hideModal}
+                            />
                         }
                     ].map((view,index)=>{
                         const{
@@ -45,8 +64,21 @@ export const InvitedMembersContent=()=>{
                 }
             </div>
             <div>
-                {activeView.component}
+                {
+                    activeView.component===""?(
+                        <MemberTable
+                            setModalBody={setModalBody}
+                            hideModal={hideModal}
+                        />
+                    ):activeView.component
+                }
             </div>
+            <Modal
+                body={modalbody}
+                small={true}
+                hidemodal={hideModal}
+                id="biblioBackdrop2"
+            />
         </div>
     )
 }

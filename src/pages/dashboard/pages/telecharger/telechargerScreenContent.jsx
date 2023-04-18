@@ -23,7 +23,7 @@ export const TelechargerContent=()=>{
 
     return(
         <div>
-            <div className="d-flex overflowx mb-3">
+            <div className="d-flex w-overflow mb-3">
                 {
                     [
                         {
@@ -60,7 +60,7 @@ export const TelechargerContent=()=>{
                             <div
                                 key={index}
                                 onClick={()=>setActiveView(name)}
-                                className={`${ activeView === name? "activeroute":null} me-5 d-flex align-items-center p-2`}>
+                                className={`${ activeView === name? "activeroute":null} me-2 d-flex align-items-center  btn`}>
                                 <span className="me-2">
                                     <img 
                                         src={icon}
@@ -68,10 +68,10 @@ export const TelechargerContent=()=>{
                                         className="dashboard-icon"
                                     />
                                 </span>
-                                <span>
+                                <span className="overflowBtnText">
                                     <Text
                                         title={name}
-                                        style="fs-7  fw-600 text-start"
+                                        style="fs-7  fw-600 text-start "
                                     />
                                 </span>
                             </div>
@@ -89,6 +89,7 @@ export const TelechargerContent=()=>{
                 body={modalbody}
                 small={true}
                 hidemodal={hideModal}
+                id="biblioBackdrop"
             />
         </div>
     )

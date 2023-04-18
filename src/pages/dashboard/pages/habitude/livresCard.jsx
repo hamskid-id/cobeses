@@ -2,13 +2,14 @@ import rec1 from "../../../../assets/Rectangle 6.svg"
 import rec2 from "../../../../assets/Rectangle 1.svg"
 import rec3 from "../../../../assets/Rectangle 2.svg"
 import rec4 from "../../../../assets/Rectangle 7.svg"
-import solidx from "../../../../assets/Solidx.svg"
-import calendar from "../../../../assets/calendar.svg"
 import userEdit from "../../../../assets/user-edit.svg"
 import { IconTag } from "../../components/icontag"
 import { Text } from "../../../../elements/text"
+import bookOpen from "../../../../assets/Book-open.svg";
 import { useNavigate } from "react-router-dom"
-export const Card=()=>{
+import { Pagination } from "../../components/pagination"
+
+export const LivresCard=()=>{
     const navigate = useNavigate();
     const books=[
         {
@@ -29,8 +30,21 @@ export const Card=()=>{
             img:rec4
         }
     ]
+    const handlePageClick = (event) => {
+        console.log(
+          `User requested page number ${event.selected}`
+        );
+      };
+      
     return(
-        <div className="row">
+        <div>
+            <div>
+                <IconTag
+                    text="Livres"
+                    icon={bookOpen}
+                />
+            </div>
+            <div className="row my-3">
             {
                 books.map((book,index)=>{
                     const{
@@ -38,12 +52,14 @@ export const Card=()=>{
                     }=book;
                     return(
                         <div 
-                            className="col-md-4 col-lg-3 col-sm-6 col-xs-12 btn"
+                            className="col-md-3 col-sm-6 col-xs-12"
                             key={index}
-                            onClick={()=>navigate(`/télécharger/details/${index}`)}
                         >
-                            <div className="p-3 br-8 border m-3">
-                                <div className="mb-3">
+                            <div className="p-3 br-8 border m-3 btn">
+                                <div 
+                                    className="mb-3"
+                                    onClick={()=>navigate(`/télécharger/details/${index}`)}
+                                >
                                     <img 
                                         src={img}
                                         alt="oject not found"
@@ -64,20 +80,18 @@ export const Card=()=>{
                                     />
                                 </div>
                                 <div className="d-flex">
-                                    <div className="me-2">
-                                        <IconTag
-                                            text="Nov 2011"
-                                            icon={calendar}
-                                            style="fs-8 faint"
+                                    <span>
+                                        <Text
+                                            style="fs-8 faint text-start"
+                                            title="ReadTime:"
                                         />
-                                    </div>
-                                        <div>
-                                        <IconTag
-                                            text="124 Pages"
-                                            icon={solidx}
-                                            style="fs-8 faint"
+                                    </span>
+                                    <span>
+                                        <Text
+                                            style="fs-8 faint text-start"
+                                            title="15Hrs 45Mins"
                                         />
-                                    </div>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -85,5 +99,10 @@ export const Card=()=>{
                 })
             }
         </div>
+             <Pagination
+                handlePageClick={handlePageClick}
+            />
+        </div>
+        
     )
 }

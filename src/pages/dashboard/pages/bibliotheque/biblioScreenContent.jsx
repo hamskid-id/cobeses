@@ -6,6 +6,7 @@ import { Bibliocard } from "./bibliocard"
 import { useRef, useState } from "react"
 import { BtnIconTag } from "../../components/btnIconTag"
 import { Modal } from "../../../../components/modal/modal"
+import { CreateLibrary } from "./createLibrary"
 
 export const BiblioContent=()=>{
     const[
@@ -27,6 +28,13 @@ export const BiblioContent=()=>{
                         <BtnIconTag
                             icon={icon}
                             text="Créer une bibliothèque"
+                            dataBsToggle="modal" 
+                            dataBsTarget="#biblioBackdrop"
+                            handleClick={()=>{
+                                setModalBody(
+                                    <CreateLibrary/>
+                                )
+                            }}
                         />
                     </span>
                 </div>

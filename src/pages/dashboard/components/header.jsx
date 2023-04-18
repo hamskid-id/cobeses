@@ -5,7 +5,7 @@ import Country from "../../../assets/FR.svg";
 
 export const Header=()=>{
     return(
-        <div className="d-flex wrap justify-content-between border-bottom my-3 pb-3 px-4">
+        <div className="nav wrap justify-content-between border-bottom my-5 pb-3 px-4 hideOnMobile">
             <div>
                 <Text
                     style="fs-5 fw-600"
@@ -15,12 +15,12 @@ export const Header=()=>{
             <div className="relative wt-50">
                 <input 
                     type="text"
-                    className="p-2 border rounded ps-5 w-100"
+                    className="btn text-start border rounded ps-5 w-100"
                     placeholder="search"
                 />
                 <img 
                     src={Search}
-                    className="icon"
+                    className="searchicon"
                     alt="object not found"
                 />
             </div>

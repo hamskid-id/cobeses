@@ -11,6 +11,7 @@ import { EditLibrary } from "./editLibrary";
 import { useNavigate } from "react-router-dom";
 import { DeleteNotification } from "../../components/deleteNotification";
 import { SuccessNotification } from "../../components/successNotification";
+import { InviteUsersToLibrary } from "./inviteToLibrary";
 
 export const Bibliocard=({
     setModalBody,
@@ -30,7 +31,7 @@ export const Bibliocard=({
                             className="col-md-3 col-sm-6 col-xs-12"
                             key={index}
                         >
-                            <div className="p-2 br-8 border m-3">
+                            <div className="p-3 br-8 border m-3 btn">
                                 <div className="mb-3">
                                     <img 
                                         src={img}
@@ -78,7 +79,16 @@ export const Bibliocard=({
                                                     style="fs-8 faint dropdown-item"
                                                 />
                                             </li>
-                                            <li className="dropItem px-2 py-1">
+                                            <li 
+                                                className="dropItem px-2 py-1"
+                                                data-bs-toggle="modal" 
+                                                data-bs-target="#biblioBackdrop"
+                                                onClick={
+                                                    ()=>setModalBody(
+                                                        <InviteUsersToLibrary/>
+                                                    )
+                                                }
+                                            >
                                                 <IconTag
                                                     text="Inviter à la bibliothèque"
                                                     icon={invite}
@@ -114,6 +124,8 @@ export const Bibliocard=({
                                                             handleClick={()=>setModalBody(<SuccessNotification
                                                                 hideModal={hideModal}
                                                             />)}
+                                                            title="Supprimer la bibliothèque"
+                                                            subTitle="Voulez-vous vraiment supprimer cette bibliothèque? Cela supprimera tous les membres dela bibliothèque"
                                                         />
                                                     )
                                                 }

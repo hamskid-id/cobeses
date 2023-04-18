@@ -67,7 +67,7 @@ export const BookSection=()=>{
                                     name,
                                     component
                                 })}
-                                className={`${section.name === name? "activeroute":null} me-5 d-flex align-items-center p-2`}>
+                                className={`${section.name === name? "activeroute":null} d-flex align-items-center p-2 btn`}>
                                 <span className="me-2">
                                     <img 
                                         src={icon}
@@ -75,7 +75,7 @@ export const BookSection=()=>{
                                         className="dashboard-icon"
                                     />
                                 </span>
-                                <span>
+                                <span className="overflowBtnText">
                                     <Text
                                         title={name}
                                         style="fs-7  fw-600 text-start"

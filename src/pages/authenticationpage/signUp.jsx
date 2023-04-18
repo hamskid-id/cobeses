@@ -6,9 +6,10 @@ import Lock from "../../assets/Lock.svg";
 import Person from "../../assets/Profile.svg";
 import icon from "../../assets/icon.svg"; 
 import {Btn} from "../../elements/button";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 export const SignUp=()=>{
+    const navigate = useNavigate()
     const { 
         register, 
         handleSubmit, 
@@ -81,6 +82,7 @@ export const SignUp=()=>{
                 <Text
                     title="Mot de passe oublié?"
                     style="fs-6 mb-1 greyYellow text-center"
+                    handeClick={()=>navigate("/auth/password/forget")}
                 />
                 <Text
                     title="Ou"
