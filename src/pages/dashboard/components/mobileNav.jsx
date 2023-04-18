@@ -10,7 +10,7 @@ export const MobileNav=({
 })=>{
     return(
         <>
-            <div className="mobilenav justify-content-between align-items-center pdx-4 pt-2 pb-4 hideOndesktop">
+            <div className="mobilenav justify-content-between align-items-center pdx-4 pt-3 pb-4 hideOndesktop">
                 <div className="d-flex align-items-center">
                     <span className="me-3">
                         <FaAlignJustify

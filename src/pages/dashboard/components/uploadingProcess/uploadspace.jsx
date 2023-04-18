@@ -27,7 +27,7 @@ export const UploadSpace=({setModal})=>{
 
     }
     return(
-        <div className="d-flex flex-column w-100 p-5">
+        <div className="d-flex flex-column w-100 pd-5">
             <div className="mb-5">
                 <Text
                     title="Apprenez à télécharger un livre sur COBESS"
