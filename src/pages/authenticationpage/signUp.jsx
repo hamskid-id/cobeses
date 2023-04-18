@@ -4,7 +4,7 @@ import { InputField } from "../../components/customFormField";
 import { useForm } from "react-hook-form";
 import Lock from "../../assets/Lock.svg";
 import Person from "../../assets/Profile.svg";
-import icon from "../../assets/icon.svg"; 
+import icon from "../../assets/Icon.svg"; 
 import {Btn} from "../../elements/button";
 import {Link, useNavigate} from "react-router-dom";
 

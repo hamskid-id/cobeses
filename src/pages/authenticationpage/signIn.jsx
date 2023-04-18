@@ -3,7 +3,7 @@ import {Text} from "../../elements/text";
 import { InputField } from "../../components/customFormField";
 import { useForm } from "react-hook-form";
 import Lock from "../../assets/Lock.svg";
-import icon from "../../assets/icon.svg"; 
+import icon from "../../assets/Icon.svg"; 
 import {Btn} from "../../elements/button";
 import {Link, useNavigate} from "react-router-dom";
 
