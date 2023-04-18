@@ -25,7 +25,7 @@ export const MobileNav=({
                     </span>
                     <span>
                         <Text
-                            style="fs-6 fw-600 break"
+                            style="fs-7 fw-600 break text-start"
                             title={activeRoute}
                         />
                     </span>
@@ -34,7 +34,6 @@ export const MobileNav=({
                     <span className="me-2">
                         <img 
                             src={Search}
-                            className=""
                             alt="object not found"
                         />
                     </span>
@@ -53,7 +52,7 @@ export const MobileNav=({
                             </span>
                         <span>
                             <Text
-                                style="fw-bold"
+                                style="fw-bold fs-7"
                                 title="French"
                             />
                         </span>
