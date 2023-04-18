@@ -1,7 +1,7 @@
 import { Brand } from "../../components/navbarbrand"
 import { Text } from "../../elements/text"
 import { InviteFooter } from "./footer";
-import Image from "../../assets/image (2).svg";
+import Image from "../../assets/Image (2).svg";
 import BtnImage from "../../assets/Frame 3024.svg";
 import { Btn } from "../../elements/button";
 

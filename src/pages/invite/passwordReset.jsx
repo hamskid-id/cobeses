@@ -1,7 +1,7 @@
 import { Brand } from "../../components/navbarbrand"
 import { Text } from "../../elements/text"
 import { InviteFooter } from "./footer";
-import Image from "../../assets/image (3).svg";
+import Image from "../../assets/Image (3).svg";
 import { Btn } from "../../elements/button";
 
 export const PasswordReset=()=>{

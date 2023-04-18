@@ -1,5 +1,4 @@
 import "./auth.css";
-import image from "../../assets/cobb 2.svg"
 
 export const InviteAcceptedDisplay=()=>{
     return(

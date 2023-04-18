@@ -1,5 +1,5 @@
 import { Text } from "../../elements/text";
-import image from "../../assets/image.svg";
+import image from "../../assets/Image.svg";
 export const ProposeSection=()=>{
     return(
         <div className="spaceTop faint-white">
