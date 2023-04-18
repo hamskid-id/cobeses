@@ -7,7 +7,6 @@ export const HabitudeScreen =()=>{
             <Dashboardlayout
                 BoardChildren={<HabitudeContent/>}
                 activeRoute="Habitudes de lecture"
-
             />
         </>
     )

@@ -3,13 +3,13 @@ import Search from "../../../assets/searchIcon.svg";
 import Avatar from "../../../assets/Avatar.svg";
 import Country from "../../../assets/FR.svg";
 
-export const Header=()=>{
+export const Header=({activeRoute})=>{
     return(
         <div className="nav wrap justify-content-between border-bottom my-5 pb-3 px-4 hideOnMobile">
             <div>
                 <Text
-                    style="fs-5 fw-600"
-                    title="Téléchargers"
+                    style="fs-5 fw-600 break"
+                    title={activeRoute}
                 />
             </div>
             <div className="relative wt-50">

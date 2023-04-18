@@ -6,15 +6,28 @@ import  sideLogout  from "../../../assets/sideLogout.svg";
 import { useNavigate } from "react-router-dom";
 import { DashboardBrand } from "./brand";
 import { SelectInterest } from "./uploadingProcess/selectInterest";
+import { FaTimes } from "react-icons/fa";
 
 export const SideNav=({
     activeRoute,
-    setModal
+    setModal,
+    sideNav
 })=>{
     const navigate = useNavigate();
 
     return(
-        <div className="py-3 border dashboardSide hideOnMobile">
+        <div 
+            className="py-3 border dashboardSide sideNav"
+            ref={sideNav}
+        >
+            <div 
+                className="ms-auto w-fitContent px-3 pb-3 pt-2 hideOndesktop">
+                <FaTimes
+                    color="grey"
+                    size="1rem"
+                    onClick={()=>sideNav.current.classList.remove("active")}
+                />
+            </div>
             <div className="mb-2">
                 <DashboardBrand/>
             </div>
@@ -42,7 +55,7 @@ export const SideNav=({
                                 <span>
                                     <Text
                                         title={name}
-                                        style="fs-8  fw-600 text-start"
+                                        style="fs-8  fw-600 text-start text-dark"
                                     />
                                 </span>
                             </div>
@@ -74,7 +87,7 @@ export const SideNav=({
                                 <span>
                                     <Text
                                         title={name}
-                                        style="fs-8"
+                                        style="fs-8 text-dark"
                                     />
                                 </span>
                             </div>
@@ -120,7 +133,7 @@ export const SideNav=({
                 <span>
                     <Text
                         title="Se déconnecter"
-                        style="fs-8 fw-600"
+                        style="fs-8 fw-600 text-dark"
                     />
                 </span>
                 <span>

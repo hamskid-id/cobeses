@@ -1,18 +1,13 @@
-import Index from "../../../../assets/Table header.svg"
-import  dashicon  from "../../../../assets/dash-icon.svg"
-import Search from "../../../../assets/searchIcon.svg"
-import { BtnIconTag } from "../../components/btnIconTag"
-import { Text } from "../../../../elements/text"
 import { useState } from "react"
-import { DeleteNotification } from "../../components/deleteNotification"
-import { SuccessNotification } from "../../components/successNotification"
-import { Btn } from "../../../../elements/button"
-import { Pagination } from "../../components/pagination"
-import { CaptionFilter } from "../../components/tableFilterCaption"
+import { Text } from "../../../../elements/text"
+import { Btn } from "../../../../elements/button";
+import { DeleteNotification } from "../../components/deleteNotification";
+import { SuccessNotification } from "../../components/successNotification";
+import { Pagination } from "../../components/pagination";
 
-export const RevenusTable=({
-    hideModal,
-    setModalBody
+export const PlanTable=({
+    setModalBody,
+    hideModal
 })=>{
     const[
         itemToDelete,
@@ -21,31 +16,27 @@ export const RevenusTable=({
 
     const data=[
         {
-            idDeLivre:"X67y-9yu",
-            TitreDeLivre:"Introduction to Algebra",
-            HeuresDeLecture:"20.00hrs",
-            MontantGagné:"$30.09",
-            DatePubliée:"2023-02-18"
+            invoice:"Plan de base – décembre 2022",
+            Montant:"10,00 $US",
+            Date:"1 déc. 2022",
+            Statut:"Payé"
         },
         {
-            idDeLivre:"X67y-9yu",
-            TitreDeLivre:"Introduction to Algebra",
-            HeuresDeLecture:"10.00hrs",
-            MontantGagné:"$30.09",
-            DatePubliée:"2023-02-18"
+            invoice:"Plan de base – novembre 2022",
+            Montant:"10,00 $US",
+            Date:"1 novembre 2022",
+            Statut:"Payé"
         },
         {
-            idDeLivre:"X67y-9yu",
-            TitreDeLivre:"Introduction to Algebra",
-            HeuresDeLecture:"10.00hrs",
-            MontantGagné:"Accès révoqué",
-            DatePubliée:"2023-02-18"
+            invoice:"Plan de base – octobre 2022",
+            Montant:"10,00 $US",
+            Date:"1 octobre 2022",
+            Statut:"Payé"
         },{
-            idDeLivre:"X67y-9yu",
-            TitreDeLivre:"Introduction to Algebra",
-            HeuresDeLecture:"20.00hrs",
-            MontantGagné:"$30.09",
-            DatePubliée:"2023-02-18"
+            invoice:"Plan de base – septembre 2022",
+            Montant:"10,00 $US",
+            Date:"1 sept. 2022",
+            Statut:"Payé"
         }
     ]
 
@@ -62,6 +53,7 @@ export const RevenusTable=({
                 return newArray
             }
         })
+        
     }
 
     const handlePageClick = (event) => {
@@ -69,16 +61,13 @@ export const RevenusTable=({
           `User requested page number ${event.selected}`
         );
       };
-    
-      return(
-        <div className="border br-8 my-4">
-            <div className="w-overflow my-3">
+
+    return(
+        <div>
+            <div className="w-overflow">
                 <table className=" table table-striped table-hover table-bordered table-responsive caption-top mb-3">
-                <caption>
-                        <div className="d-flex wrap justify-content-between p-2 mb-1">
-                            <div className="me-2 fs-8 fw-600">
-                                Aperçu des gains
-                            </div>
+                    <caption>
+                        <div className="d-flex wrap justify-content-between">
                             <div>
                                 <Btn
                                     style="btn btn-sm bg-grey"
@@ -100,7 +89,6 @@ export const RevenusTable=({
                                 />
                             </div>
                         </div>
-                        <CaptionFilter/>
                     </caption>
                     <thead>
                         <tr>
@@ -113,38 +101,29 @@ export const RevenusTable=({
                             <th 
                                 scope="col"
                                 className="fs-8 text-start"
-                            ><img src={Index} alt="object 20.00hrst found"/></th>
+                            >invoice</th>
                             <th 
                                 scope="col"
                                 className="fs-8 text-start"
-                            >ID de livre</th>
+                            >Montant</th>
                             <th 
                                 scope="col"
                                 className="fs-8 text-start"
-                            >Titre de livre</th>
+                            > Date</th>
                             <th 
                                 scope="col"
                                 className="fs-8 text-start"
-                            >Heures de lecture</th>
-                            <th 
-                                scope="col"
-                                className="fs-8 text-start"
-                            >Montant gagné</th>
-                            <th 
-                                scope="col"
-                                className="fs-8 text-start"
-                            >Date publiée</th>
+                            >Statut</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
                             data?.map((person,index)=>{
                                     const{
-                                        idDeLivre,
-                                        TitreDeLivre,
-                                        HeuresDeLecture,
-                                        MontantGagné,
-                                        DatePubliée
+                                        invoice,
+                                        Montant,
+                                        Date,
+                                        Statut
                                     } = person
                                     return(
                                         <tr key={index}>
@@ -155,19 +134,15 @@ export const RevenusTable=({
                                                     onChange={(e)=>handleChange(e,{index})}
                                                 />
                                             </td>
-                                            <td className="fs-8 text-start">
-                                                {index+1}
-                                            </td>
+                                            <td className="text-start fs-8">{invoice}</td>
+                                            <td  className="fs-8 text-start">{Montant}</td>
+                                            <td  className="fs-8 text-start retire">{Date}</td>
                                             <td>
                                                 <Text
-                                                    style="fw-bold fs-8 text-start ln-20"
-                                                    title={idDeLivre}
+                                                    style="activeStatus fs-8"
+                                                    title={Statut}
                                                 />
                                             </td>
-                                            <td  className="fs-8 text-start">{TitreDeLivre}</td>
-                                            <td  className="fs-8 text-start">{HeuresDeLecture}</td>
-                                            <td  className="fs-8 text-start">{MontantGagné}</td>
-                                            <td  className="fs-8 text-start">{DatePubliée}</td>
                                         </tr>
                                     )
                                 }

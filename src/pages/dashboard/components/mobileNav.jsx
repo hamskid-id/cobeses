@@ -3,15 +3,32 @@ import { Text } from "../../../elements/text";
 import Avatar from "../../../assets/Avatar.svg";
 import Country from "../../../assets/FR.svg";
 import { DashboardBrand } from "./brand";
-export const MobileNav=()=>{
+import { FaAlignJustify } from "react-icons/fa";
+export const MobileNav=({
+    sideNav,
+    activeRoute
+})=>{
     return(
         <>
             <div className="mobilenav justify-content-between align-items-center pdx-4 pt-2 pb-4 hideOndesktop">
-                <div>
-                    <Text
-                        style="fs-5 fw-600"
-                        title="Téléchargers"
-                    />
+                <div className="d-flex align-items-center">
+                    <span className="me-3">
+                        <FaAlignJustify
+                            size="1rem"
+                            color="grey"
+                            onClick={()=>{
+                                sideNav.current.classList.add("active")
+                                console.log(sideNav.current.classList)
+                            }
+                        }
+                        />
+                    </span>
+                    <span>
+                        <Text
+                            style="fs-6 fw-600 break"
+                            title={activeRoute}
+                        />
+                    </span>
                 </div>
                 <span className="d-flex">
                     <span className="me-2">

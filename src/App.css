@@ -5,6 +5,15 @@
 .hideOndesktop{
   display:none;
 }
+.plansectionHead{
+  background: #F7F4ED;
+  border: 1px solid #C0A772;
+  border-radius: 8px 8px 0px 0px;
+  padding:1rem;
+}
+.planpricesection{
+  padding:1rem;
+}
 .Revenustatbox{
   width:15rem;
   height:11rem;
@@ -376,8 +385,19 @@ h6{
   .w-230{
     width: 100%;
   }
-  .hideOnMobile{
+  .hideOnMobile,.sideNav{
     display:none;
+  }
+  .sideNav.active{
+    display: block;
+  }
+  .sideNav{
+    position: fixed;
+    top:0;
+    bottom: 0;
+    width:75%;
+    z-index:1;
+    background-color: white;
   }
   .mobilenav{
     display: flex;

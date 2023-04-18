@@ -25,6 +25,7 @@ export const SignIn=()=>{
             password,
             checkbox
         )
+        navigate("/tableau");
     }
     return(
         <Authlayout>

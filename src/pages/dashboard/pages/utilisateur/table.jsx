@@ -1,13 +1,11 @@
 import Index from "../../../../assets/Table header.svg"
-import  dashicon  from "../../../../assets/dash-icon.svg"
-import Search from "../../../../assets/searchIcon.svg"
-import { BtnIconTag } from "../../components/btnIconTag"
 import { Text } from "../../../../elements/text"
 import { useState } from "react"
 import { DeleteNotification } from "../../components/deleteNotification"
 import { SuccessNotification } from "../../components/successNotification"
 import { Btn } from "../../../../elements/button"
 import { Pagination } from "../../components/pagination"
+import { CaptionFilter } from "../../components/tableFilterCaption"
 
 export const Table=({
     hideModal,
@@ -106,28 +104,7 @@ export const Table=({
                                 />
                             </div>
                         </div>
-                        <div className="d-flex wrap border py-2 px-2 mb-1">
-                            <div className="relative wt-50 me-5  mb-1">
-                                <input 
-                                    type="text"
-                                    className="p-2 border br-8 ps-5 w-100 btn text-start"
-                                    placeholder="search"
-                                />
-                                <img 
-                                    src={Search}
-                                    className="searchicon"
-                                    alt="object not found"
-                                />
-                            </div>
-                            <div className="mb-1">
-                                <BtnIconTag
-                                    icon={dashicon}
-                                    text="Filter"
-                                    bgStyle="bg-white border btn br-8"
-                                    textStyle="text-dark"
-                                />
-                            </div>
-                        </div>
+                        <CaptionFilter/>
                     </caption>
                     <thead>
                         <tr>

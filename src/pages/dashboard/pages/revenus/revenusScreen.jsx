@@ -7,7 +7,6 @@ export const RevenusScreen =()=>{
             <Dashboardlayout
                 BoardChildren={<RevenusContent/>}
                 activeRoute="Revenus"
-
             />
         </>
     )

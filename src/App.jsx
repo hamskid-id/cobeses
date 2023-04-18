@@ -15,6 +15,8 @@ import { RevenusScreen } from './pages/dashboard/pages/revenus/revenusScreen';
 import { LibrarybooksScreen } from './pages/dashboard/pages/librarybooks.jsx/lirbarybooksScreen';
 import { InvitedMembersScreen } from './pages/dashboard/pages/membersInvited/innvitedMembersScreen';
 import { DetailsScreen } from './pages/dashboard/pages/bookdetails/detailsscreen';
+import { ParametresScreen } from './pages/dashboard/pages/parametres/parascreen';
+import { SupportScreen } from './pages/dashboard/pages/support/supportscreen';
 
 function App() {
 
@@ -36,6 +38,8 @@ function App() {
           <Route path="/lecture" element={ <HabitudeScreen/>}/>
           <Route path="/utilisateurs" element={ <UtilisateurScreen/>}/>
           <Route path="/revenus" element={ <RevenusScreen/>}/>
+          <Route path="/parametres" element={ <ParametresScreen/>}/>
+          <Route path="/supporte" element={ <SupportScreen/>}/>
         </Routes>
     </Router>
   )
