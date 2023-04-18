@@ -15,11 +15,14 @@ import { FaEllipsisV, FaRegBookmark } from "react-icons/fa"
 import ReactPaginate from 'react-paginate';
 import { DeleteNotification } from "../../components/deleteNotification";
 import { SuccessNotification } from "../../components/successNotification";
+import { InviteUsersToLibrary } from "../bibliotheque/inviteToLibrary"
+import { useNavigate } from "react-router-dom"
 
 export const BiblioCard=({
     setModalBody,
     hideModal
 })=>{
+    const navigate = useNavigate();
     const books=[
         {
             img:rec1
@@ -112,21 +115,36 @@ export const BiblioCard=({
                                             aria-expanded="false"
                                         />
                                         <ul className="dropdown-menu py-2">
-                                            <li className="dropItem px-2 py-1">
+                                            <li 
+                                                className="dropItem px-2 py-1"
+                                                data-bs-toggle="modal" 
+                                                data-bs-target="#biblioBackdrop"
+                                                onClick={
+                                                    ()=>setModalBody(
+                                                        <InviteUsersToLibrary/>
+                                                    )
+                                                }
+                                            >
                                                 <IconTag
                                                     text="Inviter à la bibliothèque"
                                                     icon={invite}
                                                     style="fs-8 faint dropdown-item"
                                                 />
                                             </li>
-                                            <li className="dropItem px-2 py-1">
+                                            <li 
+                                                className="dropItem px-2 py-1"
+                                                onClick={()=>navigate(`/bibliothèque/membre/invites/${index}`)}
+                                            >
                                                 <IconTag
                                                     text="membres invetes"
                                                     icon={member}
                                                     style="fs-8 faint dropdown-item"
                                                 />
                                             </li>
-                                             <li className="dropItem px-2 py-1">
+                                             <li 
+                                                className="dropItem px-2 py-1"
+                                                onClick={()=>navigate(`/bibliothèque/membre/invites/${index}`)}
+                                            >
                                                 <IconTag
                                                     text="Membres invités en attente"
                                                     icon={attente}
@@ -148,7 +166,7 @@ export const BiblioCard=({
                                                     )
                                                 }
                                                 data-bs-toggle="modal" 
-                                                data-bs-target="#staticBackdrop"
+                                                data-bs-target="#biblioBackdrop"
                                             >
                                                 <IconTag
                                                     text="Supprimer la bibliothèque"

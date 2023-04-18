@@ -38,6 +38,7 @@ export const LibrarybooksContent=()=>{
             <Modal
                 body={modalbody}
                 small={true}
+                id="biblioBackdrop"
                 hidemodal={hideModal}
             />
         </div>
