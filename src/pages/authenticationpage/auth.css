@@ -4,9 +4,18 @@
     background-position: center;
     background-repeat: no-repeat;
     border: 1px solid white;
+    height:100vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: fixed;
+    right: 0;
+    left: 0;
+    overflow: auto;
+    bottom: 0;
 }
 .authChildren{
-    margin:10% auto;
+    margin: auto;
     border-radius: 16px;
     padding: 2rem!important;
 }

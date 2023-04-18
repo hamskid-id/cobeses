@@ -5,7 +5,7 @@ import Country from "../../../assets/FR.svg";
 
 export const Header=({activeRoute})=>{
     return(
-        <div className="nav wrap justify-content-between border-bottom my-5 pb-3 px-4 hideOnMobile">
+        <div className="nav wrap justify-content-between border-bottom mb-5 mt-4 pb-3 px-4 hideOnMobile">
             <div>
                 <Text
                     style="fs-5 fw-600 break"

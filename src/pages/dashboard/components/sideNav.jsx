@@ -106,7 +106,6 @@ export const SideNav=({
                             setModal={setModal}
                         />
                     })
-                    console.log("hello")
                 }
                 }
             >

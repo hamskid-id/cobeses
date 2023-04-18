@@ -38,7 +38,7 @@ export const Card=()=>{
                     }=book;
                     return(
                         <div 
-                            className="col-md-4 col-lg-3 col-sm-6 col-xs-12 btn"
+                            className="col-md-4 col-lg-3 col-sm-6 col-xs-6 btn"
                             key={index}
                             onClick={()=>navigate(`/télécharger/details/${index}`)}
                         >

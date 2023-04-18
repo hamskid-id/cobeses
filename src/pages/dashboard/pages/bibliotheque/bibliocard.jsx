@@ -28,7 +28,7 @@ export const Bibliocard=({
                     }=book;
                     return(
                         <div 
-                            className="col-md-3 col-sm-6 col-xs-12"
+                            className="col-md-3 col-sm-6 col-6"
                             key={index}
                         >
                             <div className="p-3 br-8 border m-3 btn">
