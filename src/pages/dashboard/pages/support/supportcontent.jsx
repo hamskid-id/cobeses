@@ -1,6 +1,6 @@
 import { useRef, useState } from "react"
 import { SupportHome } from "./supportHome"
-import { Messages } from "./messages"
+import { Messages } from "./messagesroom"
 import { Modal } from "../../../../components/modal/modal"
 
 export const SupportContent=()=>{

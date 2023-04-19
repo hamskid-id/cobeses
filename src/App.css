@@ -13,6 +13,8 @@
   height:100vh;
 }
 .messageFooter{
+  background-color: white;
+  z-index: 1;
   position:absolute;
   bottom: 0;
   left:0;
@@ -38,6 +40,10 @@
   border: 1px solid #E4E7EC;
   border-radius: 12px;
   gap: 24px;
+}
+.bg-gainsboro{
+  background: #F2F4F7;
+  box-shadow: 0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06);
 }
 .pdx-4 {
   padding-right: 1.5rem!important;
@@ -208,6 +214,9 @@ width:100%
 .wt-40{
   width:40%;
 }
+.wt-75{
+  width:75%;
+}
 .invite-header{
   width:15rem;
   padding: 1.5rem 4rem;
@@ -221,6 +230,11 @@ width:100%
 }
 .bg-purple{
   background:#4C3B57;
+}
+.MessageBoard{
+  overflow: auto;
+  height: 70vh;
+  padding:1rem 1rem 4rem 1rem;
 }
 .overflowx{
   overflow-x: auto;
@@ -523,7 +537,7 @@ h6{
   .btnfs{
     font-size:0.8rem;
   }
-  .wt-30{
+  .wt-30,.wt-75{
     width:100%;
   }
   .fs-7 {
