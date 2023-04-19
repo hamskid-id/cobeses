@@ -49,7 +49,7 @@ export const SupportContent=()=>{
                     })
                 }
             </div>
-            <div>
+            <div className="pb-2">
                 {
                     activeView.component===""?(
                         <SupportHome

@@ -18,7 +18,7 @@ export const AccedezSection=()=>{
             <form className="input-cover">
                 <input 
                     type="text"
-                    className="p-2 rounded explore-input w-100 mb-4"
+                    className="p-2 rounded explore-input w-100 mb-4 btn"
                     placeholder="Écoles d'entrée"
                 /><br/>
                  <Btn

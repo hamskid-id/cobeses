@@ -309,7 +309,7 @@ width:100%
   line-height:20px;
 }
 .fw-600{
-  font-weight: 600;
+  font-weight: 700;
 }
 .upload{
   font-style: normal;
@@ -423,10 +423,6 @@ h6{
 @media only screen  and (max-width:996px){
   .hideOndesktop{
     display:block;
-  }
-  
-  .overflowBtnText{
-    width:8rem
   }
   .w-230{
     width: 100%;

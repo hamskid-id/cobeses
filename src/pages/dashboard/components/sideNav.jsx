@@ -74,7 +74,7 @@ export const SideNav=({
                         return(
                             <div 
                                 key={index}
-                                className={`${activeRoute ===name?"activeroute":null} d-flex p-1 w-100 ps-4 `}
+                                className={`${activeRoute ===name?"activeroute":null} d-flex p-1 w-100 ps-4`}
                                 onClick={()=>navigate(location)}
                             >
                                 <span className="me-2">
@@ -87,7 +87,7 @@ export const SideNav=({
                                 <span>
                                     <Text
                                         title={name}
-                                        style="fs-8 text-dark"
+                                        style="fs-8 fw-600 text-start text-dark"
                                     />
                                 </span>
                             </div>
