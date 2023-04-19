@@ -50,7 +50,7 @@ export const InputField=({
                         {...register(
                             `${name}`, 
                             {
-                                required:`${labelTitle} field is invalid`
+                                required:`${labelTitle ? labelTitle : name} field is invalid`
                             }
                         )
                     }
@@ -87,7 +87,7 @@ export const InputField=({
                         {...register(
                             `${name}`, 
                             {
-                                required:`${name} field is invalid`,
+                                required:`${labelTitle ? labelTitle : name} field is invalid`,
                                 minLength: {
                                     value: 8,
                                     message: "password must not be less than 8 characters"                   
@@ -126,7 +126,7 @@ export const InputField=({
                             {...register(
                                 `${name}`, 
                                 {
-                                    required:`${name} field is invalid`,
+                                    required:`${ labelTitle ? labelTitle : name } field is invalid`,
                                 }
                             )
                         }
