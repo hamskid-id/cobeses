@@ -45,7 +45,7 @@ export const SignIn=()=>{
                     type="email"
                     register={register}
                     errors={errors.email}
-                    style="p-08 light-greyInput mb-2 w-100 border border-white fs-6 br-8 ps-5"
+                    style="p-08 light-greyInput mb-2 w-100 border border-white fs-8 br-8 ps-5 btn text-start"
                 />
                 <InputField
                     inputIcon={Lock}
@@ -54,7 +54,7 @@ export const SignIn=()=>{
                     type="password"
                     register={register}
                     errors={errors.password}
-                    style="p-08 light-greyInput mb-2 w-100 border border-white fs-6 br-8 ps-5"
+                    style="p-08 light-greyInput mb-2 w-100 border border-white fs-8 br-8 ps-5 btn text-start"
                 />
                 <InputField
                     name="checkbox"
@@ -67,7 +67,7 @@ export const SignIn=()=>{
                 />
                 <Btn
                     value="Souscrire"
-                    style="w-100 btn btn-md bg-greyYellow mb-2 p-08 text-white fs-6"
+                    style="w-100 btn btn-md bg-greyYellow mb-2 p-08 text-white fs-8"
                 />
                 <Text
                     title="Mot de passe oublié?"

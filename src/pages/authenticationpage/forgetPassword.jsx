@@ -6,10 +6,9 @@ import Lock from "../../assets/Lock.svg";
 import {Btn} from "../../elements/button";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
-import { useNavigate } from "react-router-dom";
+import { Link} from "react-router-dom";
 
 export const ForgetPassword=()=>{
-    const navigate = useNavigate()
     const validationSchema = Yup.object().shape({
         password: Yup.string()
             .required('Password is required')
@@ -57,7 +56,7 @@ export const ForgetPassword=()=>{
                     type="password"
                     register={register}
                     errors={errors.password}
-                    style="p-3 light-greyInput mb-2 w-100 border border-white fs-6 br-8 ps-5"
+                    style="p-08 light-greyInput mb-2 w-100 border border-white fs-8 br-8 ps-5 btn text-start"
                 />
                 <InputField
                     inputIcon={Lock}
@@ -66,18 +65,19 @@ export const ForgetPassword=()=>{
                     type="password"
                     register={register}
                     errors={errors.confirmPassword}
-                    style="p-3 light-greyInput mb-2 w-100 border border-white fs-6 br-8 ps-5"
+                    style="p-08 light-greyInput mb-2 w-100 border border-white fs-8 br-8 ps-5 btn text-start"
                 />
                 <Btn
                     value="Réinitialiser le mot de passe"
-                    style="w-100 btn btn-md bg-greyYellow mb-2 p-3 text-white"
-                />
-                <Text
-                    title="retour connexion"
-                    style="fs-6 mb-1 greyYellow text-center"
-                    handleClick={()=>navigate("/auth/login")}
+                    style="w-100 btn btn-md bg-greyYellow mb-2 fs-8 p-08 text-white"
                 />
             </form>
+                <Link
+                    to="/auth/login"
+                    className="fs-6 mb-1 greyYellow text-center"
+                    >
+                    retour connexion
+                    </Link>
         </Authlayout>
     )
 }

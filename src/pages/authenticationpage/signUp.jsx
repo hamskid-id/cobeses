@@ -45,7 +45,7 @@ export const SignUp=()=>{
                     type="name"
                     register={register}
                     errors={errors.name}
-                    style="p-08 light-greyInput mb-2 w-100 border border-white fs-6 br-8 ps-5"
+                    style="p-08 light-greyInput mb-2 w-100 border border-white fs-8 br-8 ps-5 btn text-start"
                 />
                 <InputField
                     inputIcon={icon}
@@ -54,7 +54,7 @@ export const SignUp=()=>{
                     type="email"
                     register={register}
                     errors={errors.email}
-                    style="p-08 light-greyInput mb-2 w-100 border border-white fs-6 br-8 ps-5"
+                    style="p-08 light-greyInput mb-2 w-100 border border-white fs-8 br-8 ps-5 btn text-start"
                 />
                 <InputField
                     inputIcon={Lock}
@@ -63,7 +63,7 @@ export const SignUp=()=>{
                     type="password"
                     register={register}
                     errors={errors.password}
-                    style="p-08 light-greyInput mb-2 w-100 border border-white fs-6 br-8 ps-5"
+                    style="p-08 light-greyInput mb-2 w-100 border border-white fs-8 br-8 ps-5 btn text-start"
                 />
                 <InputField
                     inputIcon={Lock}
@@ -77,7 +77,7 @@ export const SignUp=()=>{
                 />
                 <Btn
                     value="Souscrire"
-                    style="w-100 btn btn-md bg-greyYellow mb-2 p-2 fs-6 text-white"
+                    style="w-100 btn btn-md bg-greyYellow mb-2 p-2 fs-8 text-white"
                 />
                 <Text
                     title="Mot de passe oublié?"

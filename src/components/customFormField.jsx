@@ -6,6 +6,8 @@ export const InputField=({
     errors,
     register,
     labelTitle,
+    selectOption,
+    selectArrayOption,
     defaultValue,
     labelStyle,
     style
@@ -33,6 +35,41 @@ export const InputField=({
             )
             break;
 
+            case "select" :
+            return(
+                <div className="d-flex flex-column mb-3">
+                    <label
+                        className={labelStyle}
+                        htmlFor={name}>
+                        {labelTitle}
+                    </label>
+                    <select
+                        className={style}
+                        name={name}
+                        defaultValue={defaultValue?defaultValue:null}
+                        {...register(
+                            `${name}`, 
+                            {
+                                required:`${labelTitle} field is invalid`
+                            }
+                        )
+                    }
+                    >
+                        { 
+                            selectArrayOption && selectArrayOption.map((option,index)=>{
+                                return(
+                                    <option value={option} key={index}>{option}</option>
+                                )
+                            })
+                        }
+                        {
+                            selectOption && <option value={selectOption}>{selectOption}</option>
+                        }
+                    </select>
+                    {errors && (<p className="text-danger ">{errors.message}</p>)}
+                </div>
+            )
+            break;
         case "password" :
             return(
                 <div className="w-100 mb-2 relative">
