@@ -65,7 +65,7 @@ export const MessageBoard=()=>{
                                         )
                                     }
                                     <div className="wt-75">
-                                        <div className="d-flex justify-content-between wrap w-100">
+                                        <div className="d-flex justify-content-between wrap w-100 mb-2">
                                             <span>
                                                 <Text
                                                     title={name}

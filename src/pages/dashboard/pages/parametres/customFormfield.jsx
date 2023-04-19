@@ -67,7 +67,7 @@ export const InputField=({
 
             case "select" :
             return(
-                <div className="d-flex justify-content-between justify-content-start align-items-start w-100 mb-2 border-bottom py-2">
+                <div className="d-flex justify-content-between justify-content-start align-items-start w-100 mb-2 border-bottom py-2 wrap">
                     <label
                         className={labelStyle}
                         htmlFor={name}>
