@@ -5,7 +5,7 @@ export const ExploreSection =()=>{
     return(
         <div className="spaceAside my-5">
             <Text
-                style="explore-text text-center mb-2 m-auto"
+                style="explore-text mb-2 m-auto"
                 title="Explorer les connaissances, les cultures et les idées du monde."
             />
             <Text
